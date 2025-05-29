@@ -48,12 +48,10 @@ int main(void)
     // TIM3 Canal 1 para PWM
     tim3_ch1_pwm_init(1000); // ej. 1000 Hz
     tim3_ch1_pwm_set_duty_cycle(70); // ej. 50%
-
-    // Inicialización de la Lógica de la Aplicación (room_control)
-    room_control_app_init();
-
     // Mensaje de bienvenida o estado inicial (puede estar en room_control_app_init o aquí)
     uart2_send_string("\r\nSistema Inicializado. Esperando eventos...\r\n");
+    // Inicialización de la Lógica de la Aplicación (room_control)
+    room_control_app_init();
     while (1) {
         heartbeat_led_toggle();
     }
